@@ -24,8 +24,96 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>Execution Engines</h1>
+					<p>
+						<small>Created by Kuldeep and Deepika</a></small>
+					</p>
+				</section>
+				<section>
+					<h3>Agenda</h3>
+					<p>MR Execution</p>
+					<p>Tez Execution</p>
+					<p>Comparison</p>
+					<p>Q &amp; A</p>
+				</section>
+				<section>
+					<section>
+					<h3>Map Reduce Execution Flow</h3>
+					<ul>
+						<li>Mapper Reads input split and process it.</li>
+						<li>Mapper writes intermediate results on filesystem.</li>
+						<li>Shuffling and sorting happens.</li>
+						<li>Reducer reads mapper intermediate results.</li>
+						<li>Reducers writes final output.</li>
+					</ul>
+					</section>
+					<section>
+						<h6>Map Reduce Execution Flow ...</h6>
+						<img width="900" height="500" src="suffle_and_sort_mr.png">
+						<p><small>Shuffle and sort in MapReduce</small></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Apache Tez</h3>
+						<p>Distributed execution framework targeted towards data processing application.</p>
+					</section>
+					<section>
+						<h3>Tez Engine Execution Flow</h3>
+						<img width="600" height="400" src="tez_dag.png">
+					</section>
+					<section>
+						<h6>Tez Engine Execution Flow...</h6>
+						<ul>
+							<li>Efficient Execution Engine.</li>
+							<li>Can be used by existing frameworks.
+								<small>
+								<code class="hljs">SET hive.execution.engine=[mr, tez]</code>
+							</small></li>
+							<li>Build on top of Hadoop YARN.</li>
+						</ul>
+					</section>					
+					<section>
+						<h3>End user benefits of Tez</h3>
+						<ul>
+						<li>Better performance of applications</li>
+						<li>Better predictibility of results</li>
+						<li>Efficient use of allocated resources</li>
+						<li>Focus on application business logic rather than hadoop internals</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Map Reduce vs Tez Execution</h3>
+					</section>
+					<section>
+						<h6>Map Reduce vs Tez Execution ...</h6>
+						<img width="550" height="350" src="hiveonmr.png">
+						<p><small>Hive/Pig on MR</small></p>
+					</section>
+					<section>
+						<h6>Map Reduce vs Tez Execution ...</h6>
+						<img width="550" height="350" src="hiveontez.png">
+						<p><small>Hive/Pig on Tez</small></p>
+					</section>
+					<section>
+						<h3>Performace</h3>
+						<ul>
+							<li>Data processing as a DAG reduces overheads</li>
+							<li>Efficient use of resources</li>
+							<li>Reduced network usages</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Reuse of container</h4>
+						<img width="700" height="500" src="reuse_of_containers.png">
+					</section>
+				</section>
+				<section>
+					<h3>Q &amp; A</h3>
+				</section>
 			</div>
 		</div>
 
